@@ -16,9 +16,6 @@ app.use(volleyball)
 
 app.use('/api', require('./api'))
 
-
-// routes that need the html. If none of these routes, then give a 404 page.
-// This is a workaround for the express and react interactions
 app.get('*', (req, res, next) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });

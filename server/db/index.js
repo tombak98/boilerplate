@@ -2,6 +2,7 @@
 // with your models, for which you'll find some blank files in this directory:
 
 const db = require('./database')
+const User = require('./User')
 
 
 const syncAndSeed = async () => {
@@ -9,7 +10,10 @@ const syncAndSeed = async () => {
     await db.sync({ force: true });
 
     //use this area to seed your database
-    
+    await User.create({
+      username: "Thomas",
+      password: "hello",
+    })
 
     console.log(`Seeding successful!`);
 
@@ -24,4 +28,5 @@ module.exports = {
     // Include your models in this exports object as well!
     db,
     syncAndSeed,
+    User
 }
