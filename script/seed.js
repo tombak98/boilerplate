@@ -10,6 +10,11 @@ async function seed() {
         username: "Thomas",
         password: "Bakbak",
       })
+
+      await User.create({
+        username: "Bakbak",
+        password: "Bakbak2",
+      })
     
     console.log("🌱🌱  Seeding Successful  🌱🌱");
 }
